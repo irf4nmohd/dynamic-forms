@@ -1,7 +1,7 @@
 import React from "react";
 
 function Dropdown({ name, options }) {
-	let optionsJsx = options.map((item, index) => {
+	let optionsJsx = options?.map((item, index) => {
 		return (
 			<option value={item} key={index}>
 				{item}

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Tooltip from "../Tooltip";
 
-class FormInput extends Component {
+class FormInput extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -22,7 +22,9 @@ class FormInput extends Component {
 		) {
 			this.setState({
 				errorStatus: true,
-				errorMsg: `${this.props.label} feild is empty`,
+				errorMsg: `${
+					this.props.label || this.props.placeholder || ""
+				} feild is empty`,
 			});
 		} else {
 			this.setState({
@@ -35,7 +37,9 @@ class FormInput extends Component {
 			if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(e.target.value)) {
 				this.setState({
 					errorStatus: true,
-					errorMsg: `${this.props.label} invalid`,
+					errorMsg: `${
+						this.props.label || this.props.placeholder || null
+					} invalid`,
 				});
 			} else {
 				this.setState({
@@ -60,7 +64,6 @@ class FormInput extends Component {
 			this.setState({
 				errorStatus: false,
 				errorMsg: "",
-				...this.state,
 			});
 		}
 	};

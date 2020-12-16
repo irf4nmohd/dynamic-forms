@@ -6,11 +6,11 @@ function FormRadio({ label, type, ...otherProps }) {
 			<input
 				type={type || "radio"}
 				{...otherProps}
-				id={label}
+				id={label || ""}
 				className="form_radio"
 			/>
-			<label htmlFor={label} className="form_radio-label">
-				{label}
+			<label htmlFor={label || ""} className="form_radio-label">
+				{label || ""}
 			</label>
 		</div>
 	);
