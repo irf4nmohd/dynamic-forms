@@ -20,33 +20,12 @@ const FormGroup = () => {
 	// 	console.log(value);
 	// };
 	// console.log(feildEntry);
-	const toolTipEmail = {
-		content: "user email",
-		position: "top",
-	};
-	const toolTipPassword = {
-		content: "user Password",
-		position: "left",
-	};
-	const toolTipName = {
-		content: "user name",
-		position: "right",
-	};
 	return (
 		<div className="form_container">
 			<form className="form">
-				<FormInput toolTip={toolTipName} {...formObj} />
-				<FormInput toolTip={toolTipEmail} {...formEmailObj} />
-				<FormInput toolTip={toolTipPassword} {...formPasswordObj} />
-				{/* <div className="form_group">
-					<select name="Qualification" className="dropdown" required>
-						<option value="" defaultValue>
-							Qualification
-						</option>
-						<option value="B.Tech">B.Tech</option>
-						<option value="M.Tech">M.Tech</option>
-					</select>
-				</div> */}
+				<FormInput {...formObj} />
+				<FormInput {...formEmailObj} />
+				<FormInput {...formPasswordObj} />
 				<Dropdown {...dropdownObj} />
 				<FormRadio {...radioObj} label="male" />
 				<FormRadio {...radioObj} label="female" />

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Tooltip from "../Tooltip";
 
 class FormInput extends Component {
 	constructor(props) {
@@ -68,24 +69,15 @@ class FormInput extends Component {
 	// };
 
 	render() {
+		let { type, label, toolTip, ...otherProps } = this.props;
 		return (
 			<>
 				<div className="form_group form_group-input">
 					<input
-						onMouseOver={() => {
-							this.setState({ tooltipVisible: true });
-						}}
-						onMouseLeave={() => {
-							this.setState({ tooltipVisible: false });
-						}}
-						maxLength={20}
-						type={this.props.type || "text"}
-						className={"form_input"}
-						id={this.props.id || this.props.label}
-						placeholder={this.props.placeholder || this.props.label}
-						required={this.props.required || false}
-						autoComplete="off"
-						disabled={this.props.disabled || false}
+						{...otherProps}
+						title=""
+						type={type || "text"}
+						className="form_input"
 						onFocus={(e) => {
 							this.handleFocus(e);
 						}}
@@ -93,21 +85,25 @@ class FormInput extends Component {
 							this.handleBlur(e);
 						}}
 						onChange={this.handleChange}
-						title=""
+						onMouseOver={() => {
+							this.setState({ tooltipVisible: true });
+						}}
+						onMouseLeave={() => {
+							this.setState({ tooltipVisible: false });
+						}}
 					/>
-					<label htmlFor={this.props.id} className="form_label">
-						{this.props.label}
+					<label
+						htmlFor={(this.props.id || label) ?? null}
+						className="form_label"
+					>
+						{label ?? null}
 					</label>
-					{this.state.tooltipVisible ? (
-						<div
-							className={`tooltip-bubble tooltip-${this.props.toolTip.position}`}
-						>
-							<div className="tooltip-message">
-								{this.props.toolTip.content}
-							</div>
-						</div>
+					{/* tooltip conditional rendering. */}
+					{this.state.tooltipVisible && toolTip ? (
+						<Tooltip {...toolTip} />
 					) : null}
 				</div>
+				{/* validation error block */}
 				<div className="msg-container">
 					{this.state.errorStatus ? this.state.errorMsg : null}
 				</div>

@@ -4,7 +4,11 @@ export const formObj = {
 	placeholder: "full name",
 	required: true,
 	label: "fullname",
-	disabled: false,
+	autoComplete: "off",
+	toolTip: {
+		content: "user name",
+		tooltipPosition: "right",
+	},
 };
 export const formEmailObj = {
 	type: "email",
@@ -12,7 +16,11 @@ export const formEmailObj = {
 	placeholder: "Enter your EmailID",
 	required: true,
 	label: "EmailId",
-	disabled: false,
+	autoComplete: "off",
+	toolTip: {
+		content: "user email",
+		tooltipPosition: "top",
+	},
 };
 export const formPasswordObj = {
 	type: "password",
@@ -20,7 +28,11 @@ export const formPasswordObj = {
 	placeholder: "password",
 	required: true,
 	label: "Password",
-	disabled: false,
+	autoComplete: "off",
+	toolTip: {
+		content: "user Password",
+		tooltipPosition: "left",
+	},
 };
 
 export const radioObj = {
