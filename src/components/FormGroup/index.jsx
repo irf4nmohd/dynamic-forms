@@ -11,8 +11,8 @@ import {
 	formObj,
 	formEmailObj,
 	formPasswordObj,
-	radioObj,
 	dropdownObj,
+	radioObj,
 } from "../formObjs";
 
 const FormGroup = () => {
@@ -28,8 +28,7 @@ const FormGroup = () => {
 				<FormInput {...formEmailObj} />
 				<FormInput {...formPasswordObj} />
 				<Dropdown {...dropdownObj} />
-				<FormRadio {...radioObj} label="male" />
-				<FormRadio {...radioObj} label="female" />
+				<FormRadio {...radioObj} />
 				<FormBtn type="submit" />
 				<FormBtn type="reset" />
 			</form>

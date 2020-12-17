@@ -38,6 +38,13 @@ export const formPasswordObj = {
 export const radioObj = {
 	type: "radio",
 	name: "gender",
+	btns: [
+		{ label: "female", value: "female" },
+		{
+			label: "male",
+			value: "male",
+		},
+	],
 };
 
 export const dropdownObj = {
