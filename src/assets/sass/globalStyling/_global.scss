@@ -1,5 +1,6 @@
 //importing font
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap");
 //global level css variables
 :root {
 	--color-primary-light: #e1e8ed;
@@ -11,6 +12,9 @@
 
 	--font-primary: 1.6rem;
 }
+
+$color-primary-light: #e1e8ed;
+$color-primary-dark: #ccd6dd;
 //global rest
 *,
 *::after,
@@ -23,6 +27,18 @@
 html {
 	font-size: 62.5%;
 	box-sizing: border-box;
+	@include respond(tab-land) {
+		font-size: 59%;
+	}
+	@include respond(tab-port) {
+		font-size: 52%;
+	}
+	@include respond(phone) {
+		font-size: 45%;
+	}
+	@include respond(big-desktop) {
+		font-size: 75%;
+	}
 }
 
 body {
@@ -30,5 +46,4 @@ body {
 	font-family: Poppins, sans-serif;
 	line-height: 1.2;
 	color: var(--color-dark-1);
-	background: linear-gradient(to right, #1d2b64, #f8cdda);
 }

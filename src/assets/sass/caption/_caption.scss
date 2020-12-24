@@ -1,0 +1,24 @@
+.caption_container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	font-family: Cinzel, sans-serif;
+	white-space: nowrap;
+}
+
+.caption {
+	&_start {
+		font-size: 6.5rem;
+		letter-spacing: 3.5px;
+		@include respond(tab-land) {
+			font-size: 5rem;
+		}
+		@include respond(tab-port) {
+			font-size: 4rem;
+		}
+	}
+	&_end {
+		font-size: 3.5rem;
+	}
+}

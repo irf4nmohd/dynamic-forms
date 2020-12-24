@@ -1,38 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Dropdown from "../Dropdown";
-import FormInput from "../FormInput";
-import FormBtn from "../FormBtn";
-import FormRadio from "../FormRadio";
+import TextFeild from "../TextFeild";
+import CustomBtn from "../CustomBtn";
+import CustomRadioBtn from "../CustomRadioBtn";
 
-//import form-json
+//importing form-json
 
 import {
-	formObj,
-	formEmailObj,
-	formPasswordObj,
+	textObj,
+	emailObj,
+	passwordObj,
 	dropdownObj,
 	radioObj,
 } from "../formObjs";
 
 const FormGroup = () => {
-	// const [feildEntry, setFeildEntry] = useState({});
-	// const change = (value) => {
-	// 	console.log(value);
-	// };
-	// console.log(feildEntry);
+	//storing all the entered value
+	const [feildEntry, setFeildEntry] = useState({});
+	//setting state
+	let onChangingValue = (event) => {
+		setFeildEntry({ ...feildEntry, [event.target.name]: event.target.value });
+	};
+	//handling form submit & showing the entry in console
+	let handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(feildEntry);
+		setFeildEntry({});
+	};
 	return (
-		<div className="form_container">
-			<form className="form">
-				<FormInput {...formObj} />
-				<FormInput {...formEmailObj} />
-				<FormInput {...formPasswordObj} />
-				<Dropdown {...dropdownObj} />
-				<FormRadio {...radioObj} />
-				<FormBtn type="submit" />
-				<FormBtn type="reset" />
-			</form>
-		</div>
+		<form className="form_container" onSubmit={handleSubmit}>
+			<TextFeild onChangingValue={onChangingValue} obj={textObj} />
+			<TextFeild onChangingValue={onChangingValue} obj={emailObj} />
+			<TextFeild onChangingValue={onChangingValue} obj={passwordObj} />
+			<Dropdown onChangingValue={onChangingValue} obj={dropdownObj} />
+			<CustomRadioBtn onChangingValue={onChangingValue} obj={radioObj} />
+			<CustomBtn type="submit" />
+		</form>
 	);
 };
 

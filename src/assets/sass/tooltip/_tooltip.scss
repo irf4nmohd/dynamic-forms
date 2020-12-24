@@ -1,16 +1,16 @@
 .tooltip-bubble {
 	min-width: 15rem;
 	max-width: 30rem;
-	position: absolute;
+	//position: absolute;
 	z-index: 10;
-	&::after {
-		content: "";
-		position: absolute;
-	}
+	// &::after {
+	// 	content: "";
+	// 	position: absolute;
+	// }
 }
 
 .tooltip-message {
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.787);
 	border-radius: 3px;
 	color: #fff;
 	font-size: 1.2rem;
@@ -19,50 +19,117 @@
 	text-align: center;
 }
 
-.tooltip-top {
-	bottom: 60%;
-	left: 50%;
-	padding-bottom: 9px;
-	transform: translateX(-50%);
-
-	&::after {
-		border-left: 9px solid transparent;
-		border-right: 9px solid transparent;
-		border-top: 9px solid rgba(0, 0, 0, 0.7);
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-}
-
-.tooltip-left {
-	top: 70%;
-	right: 100%;
-	padding-right: 9px;
-	transform: translateY(-50%);
-
-	&::after {
-		border-left: 9px solid rgba(0, 0, 0, 0.7);
-		border-top: 9px solid transparent;
-		border-bottom: 9px solid transparent;
-		top: 50%;
-		right: 0;
-		transform: translateY(-50%);
-	}
+.tooltip_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .tooltip-right {
-	top: 70%;
-	left: 100%;
-	padding-left: 9px;
-	transform: translateY(-50%);
-
-	&::after {
-		border-right: 9px solid rgba(0, 0, 0, 0.7);
-		border-top: 9px solid transparent;
-		border-bottom: 9px solid transparent;
-		top: 50%;
-		left: 0;
-		transform: translateY(-50%);
-	}
+	width: min-content;
+	border-top: 9px solid transparent;
+	border-bottom: 9px solid transparent;
+	border-right: 9px solid rgba(0, 0, 0, 0.787);
 }
+.tooltip-left {
+	border-top: 9px solid transparent;
+	border-bottom: 9px solid transparent;
+	border-left: 9px solid rgba(0, 0, 0, 0.787);
+}
+
+.tooltip-bottom {
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-bottom: 9px solid rgba(0, 0, 0, 0.787);
+}
+
+.tooltip-top {
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-top: 9px solid rgba(0, 0, 0, 0.787);
+}
+// .tooltip-top {
+// 	// bottom: 60%;
+// 	// left: 50%;
+// 	// padding-bottom: 9px;
+// 	// transform: translateX(-50%);
+
+// 	&::after {
+// 		// border-left: 9px solid transparent;
+// 		// border-right: 9px solid transparent;
+// 		// border-top: 9px solid rgba(0, 0, 0, 0.7);
+// 		// bottom: 0;
+// 		// left: 50%;
+// 		// transform: translateX(-50%);
+// 		border-left: 9px solid transparent;
+// 		border-right: 9px solid transparent;
+// 		border-top: 9px solid rgba(0, 0, 0, 0.787);
+// 		bottom: 0;
+// 		left: 50%;
+// 		transform: translateX(-50%) translateY(0.9rem);
+// 	}
+// }
+
+// .tooltip-left {
+// 	&::after {
+// 		border-left: 9px solid rgba(0, 0, 0, 0.787);
+// 		border-bottom: 9px solid transparent;
+// 		border-top: 9px solid transparent;
+// 		top: 50%;
+// 		right: 0%;
+// 		transform: translateX(0.9rem) translateY(-50%);
+// 	}
+// }
+
+// .tooltip-right {
+// 	&::after {
+// 		border-right: 9px solid rgba(0, 0, 0, 0.787);
+// 		border-bottom: 9px solid transparent;
+// 		border-top: 9px solid transparent;
+// 		top: 50%;
+// 		left: 0%;
+// 		transform: translateX(-0.9rem) translateY(-50%);
+// 	}
+// }
+
+// .tooltip-bubble {
+// 	&::after {
+// 		border-bottom: 9px solid rgba(0, 0, 0, 0.787);
+// 		border-left: 9px solid transparent;
+// 		border-right: 9px solid transparent;
+// 		top: 0%;
+// 		left: 50%;
+// 		transform: translateX(-50%) translateY(-0.9rem);
+// 	}
+// }
+// .tooltip-left {
+// 	top: 70%;
+// 	right: 100%;
+// 	padding-right: 9px;
+// 	transform: translateY(-50%);
+
+// 	&::after {
+// 		border-left: 9px solid rgba(0, 0, 0, 0.7);
+// 		border-top: 9px solid transparent;
+// 		border-bottom: 9px solid transparent;
+// 		top: 50%;
+// 		right: 0;
+// 		transform: translateY(-50%);
+// 	}
+// }
+
+// .tooltip-right {
+// 	top: 70%;
+// 	left: 100%;
+// 	padding-left: 9px;
+// 	transform: translateY(-50%);
+
+// 	&::after {
+// 		border-right: 9px solid rgba(0, 0, 0, 0.7);
+// 		border-top: 9px solid transparent;
+// 		border-bottom: 9px solid transparent;
+// 		top: 50%;
+// 		left: 0;
+// 		transform: translateY(-50%);
+// 	}
+// }

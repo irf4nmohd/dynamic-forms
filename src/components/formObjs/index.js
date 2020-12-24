@@ -1,20 +1,22 @@
-export const formObj = {
+export const textObj = {
 	type: "text",
 	id: "name",
-	placeholder: "full name",
+	placeholder: "Enter Your Full Name",
 	required: true,
-	label: "fullname",
+	name: "fullName",
+	label: "Full Name",
 	autoComplete: "off",
 	toolTip: {
 		content: "user name",
-		tooltipPosition: "right",
+		tooltipPosition: "bottom",
 	},
 };
-export const formEmailObj = {
+export const emailObj = {
 	type: "email",
 	id: "email",
 	placeholder: "Enter your EmailID",
 	required: true,
+	name: "emailId",
 	label: "EmailId",
 	autoComplete: "off",
 	toolTip: {
@@ -22,10 +24,11 @@ export const formEmailObj = {
 		tooltipPosition: "top",
 	},
 };
-export const formPasswordObj = {
+export const passwordObj = {
 	type: "password",
 	id: "password",
 	placeholder: "password",
+	name: "userPassword",
 	required: true,
 	label: "Password",
 	autoComplete: "off",
@@ -39,15 +42,18 @@ export const radioObj = {
 	type: "radio",
 	name: "gender",
 	btns: [
-		{ label: "female", value: "female" },
+		{ label: "female", value: "female", id: "female" },
 		{
 			label: "male",
 			value: "male",
+			id: "male",
 		},
 	],
+	required: true,
 };
 
 export const dropdownObj = {
 	name: "Qualification",
 	options: ["B.tech", "M.tech"],
+	required: true,
 };

@@ -1,0 +1,46 @@
+.top {
+	flex-direction: column-reverse;
+}
+
+.left {
+	flex-direction: row-reverse;
+}
+
+.right {
+	flex-direction: row;
+}
+
+.bottom {
+	flex-direction: column;
+}
+
+.tipPos {
+	&-top {
+		top: 0%;
+		left: 50%;
+		transform: translate(-50%, -100%);
+	}
+	&-bottom {
+		left: 50%;
+		bottom: 0%;
+		transform: translate(-50%, 100%);
+	}
+	&-right {
+		right: 0%;
+		top: 50%;
+		transform: translate(100%, -50%);
+	}
+	&-left {
+		left: 0%;
+		top: 50%;
+		transform: translate(-100%, -50%);
+	}
+}
+
+.m {
+	&_top {
+		&-sm {
+			margin-top: 2rem;
+		}
+	}
+}
